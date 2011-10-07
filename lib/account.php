@@ -11,6 +11,15 @@ class account {
     public function __construct() {
     }
 
+    public function is_empty() {
+        foreach ($this as $v) {
+            if (!empty($v)) {
+                return(false);
+            }
+            return(true);
+        }
+    }
+
 
     public function set_email_address($email_address) {
         if (filter_var($email_address, FILTER_VALIDATE_EMAIL)) {
