@@ -21,11 +21,25 @@ class account {
     }
 
 
+    public function set_age($age) {
+        $age = (int)$age;
+        if ($age < 0) {
+            throw new \Exception("The age can not be a negative number.");
+        }
+        $this->age = $age;
+        return($this);
+    }
+
     public function set_email_address($email_address) {
         if (filter_var($email_address, FILTER_VALIDATE_EMAIL)) {
             $this->email_address = $email_address;
         }
         return($this);
+    }
+
+
+    public function get_email_address() {
+        return($this->email_address);
     }
 
 }
