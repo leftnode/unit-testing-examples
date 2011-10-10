@@ -8,6 +8,8 @@ class account {
     public $email_address = '';
     public $password = '';
 
+    public $favorite_foods = array();
+
     public function __construct() {
     }
 
@@ -34,6 +36,11 @@ class account {
         if (filter_var($email_address, FILTER_VALIDATE_EMAIL)) {
             $this->email_address = $email_address;
         }
+        return($this);
+    }
+
+    public function set_favorite_foods(array $favorite_foods) {
+        $this->favorite_foods = $favorite_foods;
         return($this);
     }
 

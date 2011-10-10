@@ -13,4 +13,12 @@ class sfc_test_ex5 extends \PHPUnit_Framework_TestCase {
         $account->set_age(-10);
     }
 
+    /**
+     * @expectedException \PHPUnit_Framework_Error
+     */
+    public function test_set_favorite_foods__requires_array_of_foods() {
+        $account = new account;
+        $account->set_favorite_foods('sushi');
+    }
+
 }
